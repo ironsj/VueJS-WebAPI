@@ -1,29 +1,64 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <h1> Crypto Market</h1>
+    <div id = "flex">
+      <Holdings />
+      <TopCoins />
+    </div>
+    <p>Data source <a href="https://www.coingecko.com/en/api"><code>https://www.coingecko.com/en/api</code></a></p>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Holdings from './components/CompanyHoldings.vue';
+import TopCoins from './components/TopCoins.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    Holdings, TopCoins
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#app{
+  align-items: center;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
+
+#flex{
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+body{
+  background-color: hsl(0, 0%, 12%);
+}
+
+p:last-of-type {
+  font-style: italic;
+  font-size: smaller;
+}
+
+p:last-of-type > a:hover {
+  color: yellow;
+}
+
+a:link {
+  color: hsl(86, 54%, 51%);
+}
+
+a:visited {
+  color: darkgray;
+}
+
+
+
 </style>
